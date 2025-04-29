@@ -1,38 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+/* Terminal-style design */
+.App, .App-header, .terminal-container, .command-input, input {
+  font-family: 'Share Tech Mono', 'Fira Mono', 'Menlo', 'Consolas', 'Courier New', monospace;
+  letter-spacing: 0.5px;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  text-align: left;
+  background-color: #000;
+  color: #0f0;
+  padding: 20px;
+  min-height: 100vh;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.terminal-container {
+  margin: 20px 0;
+  border: 1px solid #0f0;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.command-input {
+  background-color: transparent;
+  border: 1px solid #0f0;
+  color: #0f0;
+  padding: 8px 12px;
+  width: calc(100% - 24px);
+  max-width: 800px;
+  outline: none;
+  margin-top: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.command-input::placeholder {
+  color: #0f0;
+  opacity: 0.5;
+}
+
+.command-input:focus {
+  border-color: #0f0;
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
+}
+
+/* Make sure the terminal takes up enough space */
+.xterm {
+  padding: 10px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .App {
+    font-size: 14px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (min-width: 769px) {
+  .App {
+    font-size: 18px;
   }
+}
+
+/* Matrix/Binary theme for terminal */
+.App {
+  background: #000;
+  color: #00ff41;
+}
+
+input, .command-input {
+  color: #00ff41;
+  background: transparent;
 }
