@@ -22,9 +22,8 @@ function App() {
   const [pendingRoute, setPendingRoute] = useState(null);
   // Modal for terminal UI (green/black style)
   const [modalProject, setModalProject] = useState(null);
-  const [viewMode, setViewMode] = useState('terminal'); // 'terminal' or 'y2k'
+  const [viewMode, setViewMode] = useState('y2k'); // Default to 'y2k' view
   const [loading, setLoading] = useState(false); // <-- loading state for animation
-  const [showWelcome, setShowWelcome] = useState(true); // Show welcome modal on launch
 
   // Utility to convert React node to plain text for terminal display
   function getRouteContentText(pathname) {
@@ -254,100 +253,6 @@ function App() {
             }
           `}</style>
         </motion.div>
-      </div>
-    );
-  }
-
-  if (showWelcome) {
-    // Y2K-styled welcome modal
-    return (
-      <div style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100vw',
-        height: '100vh',
-        background: 'url(' + process.env.PUBLIC_URL + '/vapor_sky.jpg) center center / cover no-repeat fixed',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        zIndex: 9999,
-      }}>
-        <div style={{
-          background: '#f0f0f0',
-          border: '2.5px solid #fff',
-          borderBottom: '2.5px solid #888',
-          borderRight: '2.5px solid #888',
-          boxShadow: '6px 6px 0 #888',
-          width: 420,
-          maxWidth: '95vw',
-          padding: 0,
-          borderRadius: 0,
-          fontFamily: 'Tahoma, Verdana, Geneva, sans-serif',
-        }}>
-          <div style={{
-            background: 'linear-gradient(90deg, #0a246a 80%, #3a6ea5 100%)',
-            color: '#fff',
-            padding: '10px 16px',
-            fontWeight: 'bold',
-            fontSize: '1.2rem',
-            borderBottom: '2px solid #888',
-            letterSpacing: 1,
-            userSelect: 'none',
-            display: 'flex',
-            alignItems: 'center',
-          }}>
-            <span style={{ width: 20, height: 20, marginRight: 8, display: 'inline-block' }}>
-              <svg width="18" height="18" viewBox="0 0 18 18"><rect x="2" y="2" width="14" height="14" fill="#fff" stroke="#0a246a" strokeWidth="2"/><rect x="4" y="4" width="10" height="10" fill="#3a6ea5"/></svg>
-            </span>
-            Welcome
-          </div>
-          <div style={{ padding: '28px 28px 24px 28px', textAlign: 'center' }}>
-            <div style={{ fontSize: '1.15rem', color: '#0a246a', marginBottom: 18 }}>
-              Welcome Cordell's Portfolio!<br />
-              Please select a view to begin:
-            </div>
-            <button
-              style={{
-                margin: '12px 0',
-                width: '100%',
-                padding: '10px 0',
-                background: 'linear-gradient(90deg, #fff 60%, #e9e9e9 100%)',
-                border: '2px outset #b0b0b0',
-                borderRadius: 2,
-                color: '#0a246a',
-                fontWeight: 'bold',
-                fontSize: '1.05rem',
-                boxShadow: '0 1px 0 #fff',
-                cursor: 'pointer',
-                transition: 'background 0.2s, box-shadow 0.2s',
-                marginBottom: 10,
-              }}
-              onClick={() => { setViewMode('y2k'); setShowWelcome(false); }}
-            >
-              Minimalist View
-            </button>
-            <button
-              style={{
-                margin: '12px 0',
-                width: '100%',
-                padding: '10px 0',
-                background: 'linear-gradient(90deg, #fff 60%, #e9e9e9 100%)', // Match Y2K button
-                border: '2px outset #b0b0b0',
-                borderRadius: 2,
-                color: '#0a246a',
-                fontWeight: 'bold',
-                fontSize: '1.05rem',
-                boxShadow: '0 1px 0 #fff',
-                cursor: 'pointer',
-                transition: 'background 0.2s, box-shadow 0.2s',
-              }}
-              onClick={() => { setViewMode('terminal'); setShowWelcome(false); }}
-            >
-              Terminal View
-            </button>
-          </div>
-        </div>
       </div>
     );
   }
