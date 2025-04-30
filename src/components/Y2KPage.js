@@ -218,9 +218,9 @@ function Y2KLanding({ onSwitchToTerminal }) {
           <ul style={projectList}>
             {!loading && !error && pagedProjects.map((proj, i) => (
               <li key={proj.project_id || i}>
-                <button
-                  type="button"
-                  style={{ ...projectLink, background: 'none', border: 'none', padding: 0, width: '100%' }}
+                <a
+                  href="#"
+                  style={projectLink}
                   tabIndex={0}
                   onClick={e => {
                     e.preventDefault();
@@ -230,7 +230,7 @@ function Y2KLanding({ onSwitchToTerminal }) {
                 >
                   <div style={{ fontWeight: 'bold' }}>{proj.name}</div>
                   <div style={{ fontSize: '0.97rem', color: '#0a246a', fontWeight: 'normal' }}>{proj.description}</div>
-                </button>
+                </a>
               </li>
             ))}
           </ul>
