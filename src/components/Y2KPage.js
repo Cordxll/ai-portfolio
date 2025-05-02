@@ -184,6 +184,10 @@ function Y2KLanding({ onSwitchToTerminal }) {
             <strong>Name:</strong> {aboutData.name}<br />
             <strong>Role:</strong> {aboutData.role}<br />
             <strong>Bio:</strong> {aboutData.bio}
+            <br />
+            <a href="https://docs.google.com/document/d/1SIlu2YeqxsgO07zb-PBgUEjrsBv8fYyqfjJ7PevnbLw/edit?tab=t.0#heading=h.jvs22hafwoz6" target="_blank" rel="noopener noreferrer" style={{ color: '#0a246a', textDecoration: 'underline' }}>
+              View My Resume (Google Docs)
+            </a>
           </div>
           <div style={sectionHeader}>Contact</div>
           <div style={contactBox}>

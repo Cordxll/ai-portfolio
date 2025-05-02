@@ -2,9 +2,9 @@
 // Centralized About Me and Contact info for reuse
 
 export const aboutData = {
-  name: 'Cordell',
-  role: 'Full Stack Developer',
-  bio: 'Passionate about building modern web applications and AI integrations. Always exploring new tech and creative solutions.'
+  name: 'Cordell Browne',
+  role: 'Software Engineer',
+  bio: 'Passionate about building modern applications and AI integrations. Always exploring new tech and creative solutions.'
 };
 
 export const contactData = {
